@@ -1,0 +1,25 @@
+h1 {
+	font-size: 2em;
+	text-align: center;
+}
+
+#imgs {
+	width: 95%;
+	text-align: center;
+}
+
+img {
+	width: 140%;
+	margin: 30px;
+	border: thick black solid;
+	border-radius: 5px;
+}
+
+#back {
+	background-color: blue;
+	color: white;
+	padding: 20px;
+	font-size: 2em;
+	text-decoration: none;
+	font-family: Arial;
+}
