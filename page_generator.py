@@ -5,7 +5,7 @@ from pathlib import Path
 index_page_content = ''
 
 p = Path('.')
-for f in list(p.glob('ch*')):
+for f in sorted(list(p.glob('ch*'))):
     if f.is_dir():
         index_page_content += f'<a href="{f.name}.html">{f.name}</a><br>\n'
 
@@ -16,10 +16,9 @@ for f in list(p.glob('ch*')):
         chapter_page_content += '<a id="back" href="index.html">BACK</a>\n'
         chapter_page_content += '<div id="imgs">\n'
         # 2. 遍历chxx文件夹，生成每一章的html文件
-        for image_name in os.listdir(f.name):
+        for image_name in sorted(os.listdir(f.name)):
             chapter_page_content += f'\t<img src="{f.name}/{image_name}">\n'
         chapter_page_content += '</div>\n'
-        print(chapter_page_content + "\n\n\n")
 
         with open(f'{f.name}.html', 'w') as chapter_page:
             chapter_page.write(chapter_page_content)
